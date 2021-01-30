@@ -1,0 +1,104 @@
+@import "../../../node_modules/uikit/src/less/components/variables.less";
+@import '../variables';
+
+.Header {
+  &_Top {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    background: #000;
+    z-index: @global-z-index;
+
+    .uk-container {
+      @media (max-width: @breakpoint-small-max) {
+        padding-left: 10px;
+      }
+    }
+
+    &_HiddenContainer {
+      height: 0;
+      background: @header-scroll-bg;
+      overflow: hidden;
+      transition: height .3s ease-in-out;
+    }
+
+    &_Hidden {
+      display: flex;
+      min-height: 40px;
+
+      // Fix bug in IE11
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        height: 1px;
+      }
+      // End fix
+
+      .uk-hidden + .Search_Crumbs {
+        padding: 7px 15px 7px 0;
+      }
+    }
+  }
+  &_Bottom {
+    padding-top: 30px;
+    background: @global-default-background;
+    @media screen and (max-width: 913px) {
+      padding-top: 36px;
+    }
+    &_Grid {
+      min-height: 70px;
+      @media (max-width: 913px) {
+        justify-content: space-between;
+      }
+    }
+  }
+
+  &_Logo {
+    display: inline-block;
+    position: relative;
+    // width: 170px;
+    // height: 45px;
+    // background: no-repeat center;
+    // background-image: url('/assets/img/logo.png');
+
+    // Fix bug in IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      margin-top: 13px;
+      margin-bottom: 12px !important;
+    }
+    // End fix
+
+    //@media (min-width: @breakpoint-medium) {
+    //  margin-right: 5px;
+    //}
+    //
+    //@media (min-width: @breakpoint-large) {
+    //  margin-right: 25px;
+    //}
+  }
+
+  &_Balance {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    padding: 0 0 0 10px;
+
+    .IconItem {
+      margin-right: 10px;
+    }
+  }
+
+}
+.Header_Coats{
+  margin-left: 20px;
+  padding-left: 20px!important;
+  border-left: 1px solid #e5e5e5;
+  border-collapse: collapse;
+  display: flex;
+  align-items: center;
+
+}
+.Header_Coats img{
+  position: relative;
+  max-width: 35px;
+  cursor: pointer;
+}

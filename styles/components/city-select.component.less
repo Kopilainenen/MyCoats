@@ -1,0 +1,96 @@
+@import '../variables';
+
+.CitySelect {
+  position: absolute;
+  right: 0;
+  bottom: 5px;
+  font-size: 13px;
+  font-weight: 400;
+  color: @global-secondary-background;
+  cursor: pointer;
+  text-decoration: underline;
+  @media screen and (max-width: 686px){
+    display: none;
+  }
+
+  .IconItem--arrowRight::ng-deep {
+    margin-left: 5px;
+
+    svg {
+      width: 5px;
+      height: 8px;
+    }
+  }
+}
+
+.CitySelectModal {
+  .uk-modal-dialog {
+    width: 971px;
+    padding: 55px 60px;
+  }
+}
+.CitySelect_Text{
+  @media screen and (max-width: 913px) {
+    display: none;
+
+  }
+
+
+}
+.IconItem--arrowRight{
+  @media screen and (max-width: 913px) {
+    display: none;
+
+  }
+
+}
+.CitySelect--1{
+  display: none;
+
+  @media screen and (max-width: 686px) {
+    color:#fff;
+    display:flex;
+    position: relative;
+    left:43px;
+  }
+
+
+
+}
+.CitySelect_Text--1{
+  display: none;
+
+  @media screen and (max-width: 686px) {
+
+    color:#fff;
+    display:flex;
+    position: relative;
+    left:31px;
+    bottom: 2px;
+    text-decoration: underline;
+  }
+  @media screen and (max-width: 360px) {
+    color:#fff;
+    display:flex;
+    position: relative;
+    left:31px;
+    bottom: 2px;
+    text-decoration: underline;
+  }
+}
+
+.IconItem--arrowRight--1 {
+  display: none;
+
+  @media screen and (max-width: 686px) {
+    color: #fff;
+    display: flex;
+    position: relative;
+    left: 38px;
+    transform: rotate(-270deg);
+    width: 6px;
+    top: 1px
+
+
+  }
+}

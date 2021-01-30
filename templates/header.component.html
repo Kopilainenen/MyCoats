@@ -1,0 +1,47 @@
+<header class="Header">
+    <div class="Header_Top">
+        <top-nav></top-nav>
+        <div class="Header_Top_HiddenContainer" scrollHeader>
+            <div class="uk-container">
+                <div class="Header_Top_Hidden">
+                    <app-search-with-basket class="uk-width-1-1" crumbStyle="none"
+								searchStyle="scroll"></app-search-with-basket>
+                </div>
+            </div>
+        </div>
+        <left-menu></left-menu>
+    </div>
+    <div class="Header_Bottom">
+        <div class="uk-container">
+            <div class="Header_Bottom_Grid uk-grid" uk-grid>
+                <div class="uk-flex uk-flex-middle uk-width-auto uk-position-relative">
+					<a class="Header_Logo" href="https://shop.zolotoykod.ru">
+						<div class="uk-visible@m"><img src="/assets/img/icon/logo.svg" width="170" height="45" uk-svg="class: uk-preserve"></div>
+						<div class="uk-hidden@m"><img src="/assets/img/icon/logo-small.svg" width="27" height="45" uk-svg="class: uk-preserve"></div>
+					</a>
+                    <city-select></city-select>
+				</div>
+				<div class="Header_Coats" *ngIf="cityService.city.PREVIEW_PICTURE !== null" uk-toggle="target: #ModalCitySelect">
+					<img src="{{ cityService.city.PREVIEW_PICTURE['SRC']}}" alt="">
+				</div>
+				<div class="Header_Coats" *ngIf="cityService.city.PREVIEW_PICTURE === null" uk-toggle="target: #ModalCitySelect">
+					<img src="/assets/img/Coats/Russia.png" alt="">
+				</div>
+				<!---<img src="assets/img/Coats/Russia.png" alt="">-->
+
+				<div class="uk-width-expand">
+                    <app-search crumbStyle="background" searchStyle="static"></app-search>
+                </div>
+                <div class="uk-flex uk-flex-right uk-width-auto">
+                    <header-basket></header-basket>
+                    <!-- <div class="Header_Balance">
+						<span class="IconItem IconItem--purse">
+							<img src="/assets/img/icon/purse.svg" uk-svg>
+						</span>
+						<span>{{ (userService.user ? userService.user.BALANCE : 0) | currency:'RUB':'symbol':'1.0-0' }}</span>
+					</div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
